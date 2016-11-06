@@ -1,0 +1,71 @@
+Version 0.2
+-----------
+
+- update sample run script, remove empty addresses from mempool
+
+Version 0.1
+------------
+
+- added setup.py, experimental.  Because of this server_main.py renamed
+  electrumx_server.py, and SERVER_MAIN environment variable was renamed
+  to ELECTRUMX.  The sample run script was updated to match.
+- improvements to logging of daemon connection issues
+- removal of old reorg test code
+- hopefully more accurate sync ETA
+
+Version 0.07
+------------
+
+- fixed a bug introduced in 0.06 at the last minute
+
+Version 0.06
+------------
+
+- mempool support.  ElectrumX maintains a representation of the daemon's
+  mempool and serves unconfirmed transactions and balances to clients.
+
+Version 0.05
+------------
+
+- fixed a bug in 0.04 that stopped ElectrumX serving once synced
+
+Version 0.04
+------------
+
+- made the DB interface a little faster for LevelDB and RocksDB; this was
+  a small regression in 0.03
+- fixed a bug that prevented block reorgs from working
+- implement and enable client connectivity.  This is not yet ready for
+  public use for several reasons.  Local RPC, and remote TCP and SSL
+  connections are all supported in the same way as Electrum-server.
+  ElectrumX does not begin listening for incoming connections until it
+  has caught up with the daemon's height.  Which ports it is listening
+  on will appear in the logs when it starts listening.  The complete
+  Electrum wire protocol is implemented, so it is possible to now use
+  as a server for your own Electrum client.  Note that mempools are
+  not yet handled so unconfirmed transactions will not be notified or
+  appear; they will appear once they get in a block.  Also no
+  responses are cached, so performance would likely degrade if used by
+  many clients.  I welcome feedback on your experience using this.
+
+
+Version 0.03
+------------
+
+- merged bauerj's abstracted DB engine contribution to make it easy to
+  play with different backends.  In addition to LevelDB this adds
+  support for RocksDB and LMDB.  We're interested in your comparitive
+  performance experiences.
+
+
+Version 0.02
+------------
+
+- fix bug where tx counts were incorrectly saved
+- large clean-up and refactoring of code, breakout into new files
+- several efficiency improvements
+- initial implementation of chain reorg handling
+- work on RPC and TCP server functionality.  Code committed but not
+  functional, so currently disabled
+- note that some of the enivronment variables have been renamed,
+  see samples/scripts/NOTES for the list
