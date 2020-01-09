@@ -20,7 +20,7 @@ VERSION="Electrum Cash Protocol Reference 1.5"
 # -- Project information -----------------------------------------------------
 
 project = 'Electrum Cash Protocol'
-copyright = '2016-2018, Neil Booth, 2019, Electrum Cash protocol devs'
+copyright = '2016-2019, Neil Booth, 2020, Electrum Cash protocol devs'
 author = 'Neil Booth, Electrum Cash protocol devs'
 
 # The full version including branding
