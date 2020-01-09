@@ -15,13 +15,13 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
-VERSION="ElectrumX 1.13.0"
+VERSION="Electrum Cash Protocol Reference 1.5"
 
 # -- Project information -----------------------------------------------------
 
-project = 'ElectrumX'
-copyright = '2016-2018, Neil Booth'
-author = 'Neil Booth'
+project = 'Electrum Cash Protocol'
+copyright = '2016-2018, Neil Booth, 2019, Electrum Cash protocol devs'
+author = 'Neil Booth, Electrum Cash protocol devs'
 
 # The full version including branding
 release = VERSION
@@ -81,9 +81,9 @@ html_theme = 'alabaster'
 # documentation.
 #
 html_theme_options = {
-    'description': 'Lightweight Electrum Server in Python',
-    'github_user': 'kyuupichan',
-    'github_repo': 'electrumx',
+    'description': 'Electrum Cash protocol reference',
+    'github_user': 'dagurval',
+    'github_repo': 'electrum-cash-protocol',
     'github_button': True,
     'github_type': 'star',
     'github_banner': True,
@@ -111,7 +111,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'ElectrumXdoc'
+htmlhelp_basename = 'ElectrumCashdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
