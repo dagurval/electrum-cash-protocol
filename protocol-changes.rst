@@ -166,3 +166,7 @@ New methods
 -----------
 
   * :func:`blockchain.scipthash.unsubscribe` to unsubscribe from a script hash.
+
+Version 1.4.2
+=============
+   * :func:`server.features` changed the requirement of key *hosts* from being MUST be present to RECOMMENDED. Note that ElectrumX will not peer with your server without this key.
