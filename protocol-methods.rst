@@ -842,6 +842,8 @@ Return a list of features and services supported by the server.
 **Signature**
 
   .. function:: server.features()
+  .. versionchanged:: 1.4.2
+     *hosts* key is no longer required, but recommended.
 
 **Result**
 
@@ -850,28 +852,6 @@ Return a list of features and services supported by the server.
 
   The following features MUST be reported by the server.  Additional
   key-value pairs may be returned.
-
-  * *hosts*
-
-    A dictionary, keyed by host name, that this server can be reached
-    at.  Normally this will only have a single entry; other entries
-    can be used in case there are other connection routes (e.g. Tor).
-
-    The value for a host is itself a dictionary, with the following
-    optional keys:
-
-    * *ssl_port*
-
-      An integer.  Omit or set to :const:`null` if SSL connectivity
-      is not provided.
-
-    * *tcp_port*
-
-      An integer.  Omit or set to :const:`null` if TCP connectivity is
-      not provided.
-
-    A server should ignore information provided about any host other
-    than the one it connected to.
 
   * *genesis_hash*
 
@@ -902,6 +882,31 @@ Return a list of features and services supported by the server.
     An integer, the pruning limit.  Omit or set to :const:`null` if
     there is no pruning limit.  Should be the same as what would
     suffix the letter ``p`` in the IRC real name.
+
+  The following features are RECOMMENDED that be reported by the servers.
+
+  * *hosts*
+
+    A dictionary, keyed by host name, that this server can be reached
+    at.  Normally this will only have a single entry; other entries
+    can be used in case there are other connection routes (e.g. Tor).
+
+    The value for a host is itself a dictionary, with the following
+    optional keys:
+
+    * *ssl_port*
+
+      An integer.  Omit or set to :const:`null` if SSL connectivity
+      is not provided.
+
+    * *tcp_port*
+
+      An integer.  Omit or set to :const:`null` if TCP connectivity is
+      not provided.
+
+    A server should ignore information provided about any host other
+    than the one it connected to.
+
 
 **Example Result**
 
