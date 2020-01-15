@@ -296,6 +296,8 @@ Return the confirmed and unconfirmed history of a :ref:`script hash
 
   .. function:: blockchain.scripthash.get_history(scripthash)
   .. versionadded:: 1.1
+  .. versionchanged:: 1.4.2
+     Transactions within same height no longer require "blockchain order".
 
   *scripthash*
 
@@ -303,10 +305,10 @@ Return the confirmed and unconfirmed history of a :ref:`script hash
 
 **Result**
 
-  A list of confirmed transactions in blockchain order, with the
+  A list of confirmed transactions ordered by blockheight, with the
   output of :func:`blockchain.scripthash.get_mempool` appended to the
-  list.  Each confirmed transaction is a dictionary with the following
-  keys:
+  list. The transaction order within same blockheight can be arbitrary.
+  Each confirmed transaction is a dictionary with the following keys:
 
   * *height*
 
