@@ -888,8 +888,10 @@ Return a list of features and services supported by the server.
   * *hosts*
 
     A dictionary, keyed by host name, that this server can be reached
-    at.  Normally this will only have a single entry; other entries
-    can be used in case there are other connection routes (e.g. Tor).
+    at.  If this dictionary is missing, then other servers will not peer
+    with this server.  Normally this dictionary will only have a single 
+    entry; other entries can be used in case there are other connection 
+    routes (e.g. Tor).
 
     The value for a host is itself a dictionary, with the following
     optional keys:
