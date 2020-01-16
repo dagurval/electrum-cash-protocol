@@ -888,10 +888,13 @@ Return a list of features and services supported by the server.
   * *hosts*
 
     A dictionary, keyed by host name, that this server can be reached
-    at.  If this dictionary is missing, then other servers will not peer
-    with this server.  Normally this dictionary will only have a single 
-    entry; other entries can be used in case there are other connection 
-    routes (e.g. Tor).
+    at.  If this dictionary is missing, then this is a way to signal to
+    other servers that while this host is reachable, it does not wish to 
+    peer with other servers.  A server SHOULD stop peering with a peer 
+    if it sees the *hosts* dictionary for its peer is empty and/or no  
+    longer contains the expected route (e.g. hostname).  Normally this 
+    dictionary will only contain a single entry; other entries can be 
+    used in case there are other connection routes (e.g. Tor).
 
     The value for a host is itself a dictionary, with the following
     optional keys:
