@@ -10,11 +10,12 @@ Return the confirmed and unconfirmed balances of a Bitcoin Cash address.
 **Signature**
 
   .. function:: blockchain.address.get_balance(address)
-  .. deprecated:: 1.2 removed in version 1.3, re-added in version 1.4.3
+  .. versionadded:: 1.4.3
 
   * *address*
 
-    The address as a Cash Address (with or without prefix) or a Base58 string.
+    The address as a Cash Address (with or without prefix) or as a Legacy
+    (base58) string.
 
 **Result**
 
@@ -28,11 +29,12 @@ Return the confirmed and unconfirmed history of a Bitcoin Cash address.
 **Signature**
 
   .. function:: blockchain.address.get_history(address)
-  .. deprecated:: 1.2 removed in version 1.3, re-added in version 1.4.3
+  .. versionadded:: 1.4.3
 
   * *address*
 
-    The address as a Cash Address (with or without prefix) or a Base58 string.
+    The address as a Cash Address (with or without prefix) or as a Legacy
+    (base58) string.
 
 **Result**
 
@@ -46,15 +48,39 @@ Return the unconfirmed transactions of a Bitcoin Cash address.
 **Signature**
 
   .. function:: blockchain.address.get_mempool(address)
-  .. deprecated:: 1.2 removed in version 1.3, re-added in version 1.4.3
+  .. versionadded:: 1.4.3
 
   * *address*
 
-    The address as a Cash Address (with or without prefix) or a Base58 string.
+    The address as a Cash Address (with or without prefix) or as a Legacy
+    (base58) string.
 
 **Result**
 
   As for :func:`blockchain.scripthash.get_mempool`.
+
+blockchain.address.get_scripthash
+=================================
+
+Translate a Bitcoin Cash address to a :ref:`script hash <script hashes>`. This
+method is potentially useful for clients preferring to work with :ref:`script
+hashes <script hashes>` but lacking the local libraries necessary to generate
+them.
+
+**Signature**
+
+  .. function:: blockchain.address.get_scripthash(address)
+  .. versionadded:: 1.4.3
+
+  * *address*
+
+    The address as a Cash Address (with or without prefix) or as a Legacy
+    (base58) string.
+
+**Result**
+
+  The unique 32-byte hex-encoded :ref:`script hash <script hashes>` that
+  corresponds to the decoded address.
 
 blockchain.address.listunspent
 ==============================
@@ -64,11 +90,12 @@ Return an ordered list of UTXOs sent to a Bitcoin Cash address.
 **Signature**
 
   .. function:: blockchain.address.listunspent(address)
-  .. deprecated:: 1.2 removed in version 1.3, re-added in version 1.4.3
+  .. versionadded:: 1.4.3
 
   * *address*
 
-    The address as a Cash Address (with or without prefix) or a Base58 string.
+    The address as a Cash Address (with or without prefix) or as a Legacy
+    (base58) string.
 
 **Result**
 
@@ -82,11 +109,12 @@ Subscribe to a Bitcoin Cash address.
 **Signature**
 
   .. function:: blockchain.address.subscribe(address)
-  .. deprecated:: 1.2 removed in version 1.3, re-added in version 1.4.3
+  .. versionadded:: 1.4.3
 
   *address*
 
-    The address as a Cash Address (with or without prefix) or a Base58 string.
+    The address as a Cash Address (with or without prefix) or as a Legacy
+    (base58) string.
 
 **Result**
 
@@ -137,13 +165,15 @@ its :ref:`status <status>` changes.
 
   *address*
 
-    The address as a Cash Address (with or without prefix) or a Base58 string.
+    The address as a Cash Address (with or without prefix) or as a Legacy
+    (base58) string.
 
 **Result**
 
-  Returns :const:`True` if the address was subscribed to, otherwise :const:`False`.
-  Note that :const:`False` might be returned even for something subscribed to earlier,
-  becuase the server can drop subscriptions in rare circumstances.
+  Returns :const:`True` if the address was subscribed to, otherwise
+  :const:`False`. Note that :const:`False` might be returned even for something
+  subscribed to earlier, because the server can drop subscriptions in rare
+  circumstances.
 
 blockchain.block.header
 =======================
@@ -363,7 +393,7 @@ Subscribe to receive block headers when a new block is found.
 
       See **Result** above.
 
-.. note:: should a new block arrive quickly, perhaps while the server
+.. note:: Should a new block arrive quickly, perhaps while the server
   is still processing prior blocks, the server may only notify of the
   most recent chain tip.  The protocol does not guarantee notification
   of all intermediate block headers.
@@ -635,9 +665,10 @@ Unsubscribe from a script hash, preventing future notifications if its :ref:`sta
 
 **Result**
 
-  Returns :const:`True` if the scripthash was subscribed to, otherwise :const:`False`.
-  Note that :const:`False` might be returned even for something subscribed to earlier,
-  becuase the server can drop subscriptions in rare circumstances.
+  Returns :const:`True` if the scripthash was subscribed to, otherwise
+  :const:`False`. Note that :const:`False` might be returned even for something
+  subscribed to earlier, because the server can drop subscriptions in rare
+  circumstances.
 
 blockchain.transaction.broadcast
 ================================

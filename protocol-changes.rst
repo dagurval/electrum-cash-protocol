@@ -177,9 +177,16 @@ Version 1.4.3
 New methods
 -----------
 
-  * :func:`blockchain.address.get_balance` was brought back after having been removed in 1.3.
-  * :func:`blockchain.address.get_history` was brought back after having been removed in 1.3.
-  * :func:`blockchain.address.get_mempool` was brought back after having been removed in 1.3.
-  * :func:`blockchain.address.listunspent` was brought back after having been removed in 1.3.
-  * :func:`blockchain.address.subscribe` was brought back after having been removed in 1.3.
+  * :func:`blockchain.address.get_balance` was brought back after having been
+    removed in 1.3.
+  * :func:`blockchain.address.get_history` was brought back after having been
+    removed in 1.3.
+  * :func:`blockchain.address.get_mempool` was brought back after having been
+    removed in 1.3.
+  * :func:`blockchain.address.get_scripthash` to translate an address into a
+    script hash.
+  * :func:`blockchain.address.listunspent` was brought back after having been
+    removed in 1.3.
+  * :func:`blockchain.address.subscribe` was brought back after having been
+    removed in 1.3.
   * :func:`blockchain.address.unsubscribe` to unsubscribe from an address.
