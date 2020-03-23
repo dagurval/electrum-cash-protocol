@@ -14,8 +14,9 @@ Return the confirmed and unconfirmed balances of a Bitcoin Cash address.
 
   * *address*
 
-    The address as a Cash Address (with or without prefix) or as a Legacy
-    (base58) string.
+    The address as a Cash Address string (with or without prefix). Some server
+    implementations may also support Legacy (base58) addresses but are not
+    required to do so by this specification.
 
 **Result**
 
@@ -33,8 +34,9 @@ Return the confirmed and unconfirmed history of a Bitcoin Cash address.
 
   * *address*
 
-    The address as a Cash Address (with or without prefix) or as a Legacy
-    (base58) string.
+    The address as a Cash Address string (with or without prefix). Some server
+    implementations may also support Legacy (base58) addresses but are not
+    required to do so by this specification.
 
 **Result**
 
@@ -52,8 +54,9 @@ Return the unconfirmed transactions of a Bitcoin Cash address.
 
   * *address*
 
-    The address as a Cash Address (with or without prefix) or as a Legacy
-    (base58) string.
+    The address as a Cash Address string (with or without prefix). Some server
+    implementations may also support Legacy (base58) addresses but are not
+    required to do so by this specification.
 
 **Result**
 
@@ -74,8 +77,9 @@ them.
 
   * *address*
 
-    The address as a Cash Address (with or without prefix) or as a Legacy
-    (base58) string.
+    The address as a Cash Address string (with or without prefix). Some server
+    implementations may also support Legacy (base58) addresses but are not
+    required to do so by this specification.
 
 **Result**
 
@@ -94,8 +98,9 @@ Return an ordered list of UTXOs sent to a Bitcoin Cash address.
 
   * *address*
 
-    The address as a Cash Address (with or without prefix) or as a Legacy
-    (base58) string.
+    The address as a Cash Address string (with or without prefix). Some server
+    implementations may also support Legacy (base58) addresses but are not
+    required to do so by this specification.
 
 **Result**
 
@@ -113,8 +118,9 @@ Subscribe to a Bitcoin Cash address.
 
   *address*
 
-    The address as a Cash Address (with or without prefix) or as a Legacy
-    (base58) string.
+    The address as a Cash Address string (with or without prefix). Some server
+    implementations may also support Legacy (base58) addresses but are not
+    required to do so by this specification.
 
 **Result**
 
@@ -165,8 +171,9 @@ its :ref:`status <status>` changes.
 
   *address*
 
-    The address as a Cash Address (with or without prefix) or as a Legacy
-    (base58) string.
+    The address as a Cash Address string (with or without prefix). Some server
+    implementations may also support Legacy (base58) addresses but are not
+    required to do so by this specification.
 
 **Result**
 
