@@ -170,3 +170,16 @@ New methods
 Version 1.4.2
 =============
    * :func:`server.features` changed the requirement of key *hosts* from being MUST be present to RECOMMENDED. Note that ElectrumX will not peer with your server without this key.
+
+Version 1.4.3
+=============
+
+New methods
+-----------
+
+  * :func:`blockchain.address.get_balance` was brought back after having been removed in 1.3.
+  * :func:`blockchain.address.get_history` was brought back after having been removed in 1.3.
+  * :func:`blockchain.address.get_mempool` was brought back after having been removed in 1.3.
+  * :func:`blockchain.address.listunspent` was brought back after having been removed in 1.3.
+  * :func:`blockchain.address.subscribe` was brought back after having been removed in 1.3.
+  * :func:`blockchain.address.unsubscribe` to unsubscribe from an address.

@@ -2,6 +2,149 @@
  Protocol Methods
 ==================
 
+blockchain.address.get_balance
+==============================
+
+Return the confirmed and unconfirmed balances of a Bitcoin Cash address.
+
+**Signature**
+
+  .. function:: blockchain.address.get_balance(address)
+  .. deprecated:: 1.2 removed in version 1.3, re-added in version 1.4.3
+
+  * *address*
+
+    The address as a Cash Address (with or without prefix) or a Base58 string.
+
+**Result**
+
+  See :func:`blockchain.scripthash.get_balance`.
+
+blockchain.address.get_history
+==============================
+
+Return the confirmed and unconfirmed history of a Bitcoin Cash address.
+
+**Signature**
+
+  .. function:: blockchain.address.get_history(address)
+  .. deprecated:: 1.2 removed in version 1.3, re-added in version 1.4.3
+
+  * *address*
+
+    The address as a Cash Address (with or without prefix) or a Base58 string.
+
+**Result**
+
+  As for :func:`blockchain.scripthash.get_history`.
+
+blockchain.address.get_mempool
+==============================
+
+Return the unconfirmed transactions of a Bitcoin Cash address.
+
+**Signature**
+
+  .. function:: blockchain.address.get_mempool(address)
+  .. deprecated:: 1.2 removed in version 1.3, re-added in version 1.4.3
+
+  * *address*
+
+    The address as a Cash Address (with or without prefix) or a Base58 string.
+
+**Result**
+
+  As for :func:`blockchain.scripthash.get_mempool`.
+
+blockchain.address.listunspent
+==============================
+
+Return an ordered list of UTXOs sent to a Bitcoin Cash address.
+
+**Signature**
+
+  .. function:: blockchain.address.listunspent(address)
+  .. deprecated:: 1.2 removed in version 1.3, re-added in version 1.4.3
+
+  * *address*
+
+    The address as a Cash Address (with or without prefix) or a Base58 string.
+
+**Result**
+
+  As for :func:`blockchain.scripthash.listunspent`.
+
+blockchain.address.subscribe
+============================
+
+Subscribe to a Bitcoin Cash address.
+
+**Signature**
+
+  .. function:: blockchain.address.subscribe(address)
+  .. deprecated:: 1.2 removed in version 1.3, re-added in version 1.4.3
+
+  *address*
+
+    The address as a Cash Address (with or without prefix) or a Base58 string.
+
+**Result**
+
+  The :ref:`status <status>` of the address.
+
+**Notifications**
+
+  As this is a subcription, the client will receive a notification
+  when the :ref:`status <status>` of the address changes.  Its
+  signature is
+
+  .. function:: blockchain.address.subscribe(address, status)
+
+  .. note:: The address returned back to the client when notifying of status
+            changes will be in the same encoding and syle as was provided when
+            subscribing. In effect, a whitespace-stripped version of the address
+            string that the client provided will be sent back to the client when
+            notifying, in order to make it easier for clients to track the
+            notification.
+
+            It is unspecified what happens if a client subscribes to the same
+            address using multiple encodings or styles, but it is RECOMMENDED
+            that servers simply update their internal subscription tables on
+            subsequent subscriptions to the same destination such that they
+            honor the latest subscription only, and not subscribe clients
+            multiple times to the same logical destination. For example, Fulcrum
+            server will simply update its table for how to refer to the
+            subscription and send clients subsequent notifications using the
+            latest encoding style of that particular address that the client
+            last provided.
+
+            Similarly, if a client mixes `blockchain.address.*` and
+            `blockchain.scripthash.*` calls to the server, it is RECOMMENDED
+            that the server treat all addresses as equivalent to their
+            scripthashes internally such that it is possible to subscribe by
+            address and later unsubscribe by scripthash, for example.
+
+blockchain.address.unsubscribe
+=================================
+
+Unsubscribe from a Bitcoin Cash address, preventing future notifications if
+its :ref:`status <status>` changes.
+
+**Signature**
+
+  .. function:: blockchain.address.unsubscribe(address)
+  .. versionadded:: 1.4.3
+
+  *address*
+
+    The address as a Cash Address (with or without prefix) or a Base58 string.
+
+**Result**
+
+  Returns :const:`True` if the address was subscribed to, otherwise :const:`False`.
+  Note that :const:`False` might be returned even for something subscribed to earlier,
+  becuase the server can drop subscriptions in rare circumstances.
+
 blockchain.block.header
 =======================
 
@@ -889,11 +1032,11 @@ Return a list of features and services supported by the server.
 
     A dictionary, keyed by host name, that this server can be reached
     at.  If this dictionary is missing, then this is a way to signal to
-    other servers that while this host is reachable, it does not wish to 
-    peer with other servers.  A server SHOULD stop peering with a peer 
-    if it sees the *hosts* dictionary for its peer is empty and/or no  
-    longer contains the expected route (e.g. hostname).  Normally this 
-    dictionary will only contain a single entry; other entries can be 
+    other servers that while this host is reachable, it does not wish to
+    peer with other servers.  A server SHOULD stop peering with a peer
+    if it sees the *hosts* dictionary for its peer is empty and/or no
+    longer contains the expected route (e.g. hostname).  Normally this
+    dictionary will only contain a single entry; other entries can be
     used in case there are other connection routes (e.g. Tor).
 
     The value for a host is itself a dictionary, with the following
@@ -1016,8 +1159,8 @@ Only the first :func:`server.version` message is accepted.
 
 **Example**::
 
-  server.version("Electrum 3.0.6", ["1.1", "1.2"])
+  server.version("Electron Cash 3.3.6", ["1.2", "1.4"])
 
 **Example Result**::
 
-  ["ElectrumX 1.2.1", "1.2"]
+  ["Fulcrum 1.0.5", "1.4"]
