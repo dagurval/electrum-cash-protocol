@@ -1,5 +1,5 @@
-Electrum Protocol
-=================
+Electrum Cash Protocol
+======================
 
 This is intended to be a reference for client and server authors
 alike.
