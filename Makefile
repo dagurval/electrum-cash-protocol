@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    = -W
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = ElectrumX
+SPHINXPROJ    = electrum-cash-porotocol
 SOURCEDIR     = .
 BUILDDIR      = _build
 
