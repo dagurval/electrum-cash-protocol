@@ -40,7 +40,8 @@ Return the confirmed and unconfirmed balances of a bitcoin address.
 **Signature**
 
   .. function:: blockchain.address.get_balance(address)
-  .. deprecated:: 1.2 removed in version 1.3
+     :noindex:
+  .. deprecated:: 1.2 removed in version 1.3, *re-added in version 1.4.3*
 
   * *address*
 
@@ -58,7 +59,8 @@ Return the confirmed and unconfirmed history of a bitcoin address.
 **Signature**
 
   .. function:: blockchain.address.get_history(address)
-  .. deprecated:: 1.2 removed in version 1.3
+     :noindex:
+  .. deprecated:: 1.2 removed in version 1.3, *re-added in version 1.4.3*
 
   * *address*
 
@@ -76,7 +78,8 @@ Return the unconfirmed transactions of a bitcoin address.
 **Signature**
 
   .. function:: blockchain.address.get_mempool(address)
-  .. deprecated:: 1.2 removed in version 1.3
+     :noindex:
+  .. deprecated:: 1.2 removed in version 1.3, *re-added in version 1.4.3*
 
   * *address*
 
@@ -94,7 +97,8 @@ Return an ordered list of UTXOs sent to a bitcoin address.
 **Signature**
 
   .. function:: blockchain.address.listunspent(address)
-  .. deprecated:: 1.2 removed in version 1.3
+     :noindex:
+  .. deprecated:: 1.2 removed in version 1.3, *re-added in version 1.4.3*
 
   * *address*
 
@@ -112,7 +116,8 @@ Subscribe to a bitcoin address.
 **Signature**
 
   .. function:: blockchain.address.subscribe(address)
-  .. deprecated:: 1.2 removed in version 1.3
+     :noindex:
+  .. deprecated:: 1.2 removed in version 1.3, *re-added in version 1.4.3*
 
   *address*
 
@@ -129,6 +134,7 @@ Subscribe to a bitcoin address.
   signature is
 
   .. function:: blockchain.address.subscribe(address, status)
+     :noindex:
 
 blockchain.headers.subscribe
 ============================
