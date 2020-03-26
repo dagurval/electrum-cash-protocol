@@ -14,9 +14,8 @@ Return the confirmed and unconfirmed balances of a Bitcoin Cash address.
 
   * *address*
 
-    The address as a Cash Address string (with or without prefix). Some server
-    implementations may also support Legacy (base58) addresses but are not
-    required to do so by this specification.
+    The address as a Cash Address string (with or without prefix). Servers
+    with `base58` key in `servers.features` also support legacy addresses.
 
 **Result**
 
@@ -34,9 +33,8 @@ Return the confirmed and unconfirmed history of a Bitcoin Cash address.
 
   * *address*
 
-    The address as a Cash Address string (with or without prefix). Some server
-    implementations may also support Legacy (base58) addresses but are not
-    required to do so by this specification.
+    The address as a Cash Address string (with or without prefix). Servers
+    with `base58` key in `servers.features` also support legacy addresses.
 
 **Result**
 
@@ -54,9 +52,8 @@ Return the unconfirmed transactions of a Bitcoin Cash address.
 
   * *address*
 
-    The address as a Cash Address string (with or without prefix). Some server
-    implementations may also support Legacy (base58) addresses but are not
-    required to do so by this specification.
+    The address as a Cash Address string (with or without prefix). Servers
+    with `base58` key in `servers.features` also support legacy addresses.
 
 **Result**
 
@@ -77,9 +74,8 @@ them.
 
   * *address*
 
-    The address as a Cash Address string (with or without prefix). Some server
-    implementations may also support Legacy (base58) addresses but are not
-    required to do so by this specification.
+    The address as a Cash Address string (with or without prefix). Servers
+    with `base58` key in `servers.features` also support legacy addresses.
 
 **Result**
 
@@ -98,9 +94,8 @@ Return an ordered list of UTXOs sent to a Bitcoin Cash address.
 
   * *address*
 
-    The address as a Cash Address string (with or without prefix). Some server
-    implementations may also support Legacy (base58) addresses but are not
-    required to do so by this specification.
+    The address as a Cash Address string (with or without prefix). Servers
+    with `base58` key in `servers.features` also support legacy addresses.
 
 **Result**
 
@@ -118,9 +113,8 @@ Subscribe to a Bitcoin Cash address.
 
   *address*
 
-    The address as a Cash Address string (with or without prefix). Some server
-    implementations may also support Legacy (base58) addresses but are not
-    required to do so by this specification.
+    The address as a Cash Address string (with or without prefix). Servers
+    with `base58` key in `servers.features` also support legacy addresses.
 
 **Result**
 
@@ -143,14 +137,10 @@ Subscribe to a Bitcoin Cash address.
 
             It is unspecified what happens if a client subscribes to the same
             address using multiple encodings or styles, but it is RECOMMENDED
-            that servers simply update their internal subscription tables on
+            that servers update their internal subscription tables on
             subsequent subscriptions to the same destination such that they
             honor the latest subscription only, and not subscribe clients
-            multiple times to the same logical destination. For example, Fulcrum
-            server will simply update its table for how to refer to the
-            subscription and send clients subsequent notifications using the
-            latest encoding style of that particular address that the client
-            last provided.
+            multiple times to the same logical destination.
 
             Similarly, if a client mixes `blockchain.address.*` and
             `blockchain.scripthash.*` calls to the server, it is RECOMMENDED
@@ -171,9 +161,8 @@ its :ref:`status <status>` changes.
 
   *address*
 
-    The address as a Cash Address string (with or without prefix). Some server
-    implementations may also support Legacy (base58) addresses but are not
-    required to do so by this specification.
+    The address as a Cash Address string (with or without prefix). Servers
+    with `base58` key in `servers.features` also support legacy addresses.
 
 **Result**
 
@@ -1093,6 +1082,12 @@ Return a list of features and services supported by the server.
     A server should ignore information provided about any host other
     than the one it connected to.
 
+   The following features are common, but optional.
+
+   * *base58*
+
+     Signals that methods that accept an Bitcoin Cash address also accept
+     legacy base58 encoding.
 
 **Example Result**
 
