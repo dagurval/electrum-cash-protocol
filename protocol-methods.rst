@@ -220,7 +220,7 @@ Subscribe to receive block headers when a new block is found.
 
       See **Result** above.
 
-.. note:: should a new block arrive quickly, perhaps while the server
+.. note:: Should a new block arrive quickly, perhaps while the server
   is still processing prior blocks, the server may only notify of the
   most recent chain tip.  The protocol does not guarantee notification
   of all intermediate block headers.
@@ -492,9 +492,10 @@ Unsubscribe from a script hash, preventing future notifications if its :ref:`sta
 
 **Result**
 
-  Returns :const:`True` if the scripthash was subscribed to, otherwise :const:`False`.
-  Note that :const:`False` might be returned even for something subscribed to earlier,
-  becuase the server can drop subscriptions in rare circumstances.
+  Returns :const:`True` if the scripthash was subscribed to, otherwise
+  :const:`False`. Note that :const:`False` might be returned even for something
+  subscribed to earlier, because the server can drop subscriptions in rare
+  circumstances.
 
 blockchain.transaction.broadcast
 ================================
@@ -889,11 +890,11 @@ Return a list of features and services supported by the server.
 
     A dictionary, keyed by host name, that this server can be reached
     at.  If this dictionary is missing, then this is a way to signal to
-    other servers that while this host is reachable, it does not wish to 
-    peer with other servers.  A server SHOULD stop peering with a peer 
-    if it sees the *hosts* dictionary for its peer is empty and/or no  
-    longer contains the expected route (e.g. hostname).  Normally this 
-    dictionary will only contain a single entry; other entries can be 
+    other servers that while this host is reachable, it does not wish to
+    peer with other servers.  A server SHOULD stop peering with a peer
+    if it sees the *hosts* dictionary for its peer is empty and/or no
+    longer contains the expected route (e.g. hostname).  Normally this
+    dictionary will only contain a single entry; other entries can be
     used in case there are other connection routes (e.g. Tor).
 
     The value for a host is itself a dictionary, with the following
