@@ -1201,4 +1201,4 @@ Only the first :func:`server.version` message is accepted.
 
 **Example Result**::
 
-  ["Fulcrum 1.0.5", "1.4"]
+  ["AwesomeServer 2.2.3", "1.4"]
