@@ -749,6 +749,9 @@ Return a raw transaction.
        daemon returns when asked for a verbose form of the raw
        transaction.
 
+    If transaction does not exist on blockhain or in the mempool, 
+    an error is returned.
+
 **Example Results**
 
 When *verbose* is :const:`false`::
