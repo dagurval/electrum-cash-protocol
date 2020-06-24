@@ -603,7 +603,8 @@ Return an ordered list of UTXOs sent to a script hash.
 
   * *tx_hash*
 
-    The output's transaction hash as a hexadecimal string.
+    The output's transaction hash as a hexadecimal string. The hash
+    is little-endian encoded (same as bitcoind RPC).
 
   * *value*
 
