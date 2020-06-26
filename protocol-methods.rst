@@ -411,6 +411,10 @@ Subscribe to receive block headers when a new block is found.
   to figure out the common ancestor block and request any missing
   block headers to acquire a consistent view of the chain state.
 
+  If a client subscribes multiple times, the subsequent subscriptions
+  will be ignored and the client will continue to receive one notification
+  per header.
+
 
 blockchain.relayfee
 ===================
@@ -749,7 +753,7 @@ Return a raw transaction.
        daemon returns when asked for a verbose form of the raw
        transaction.
 
-    If transaction does not exist on blockhain or in the mempool, 
+    If transaction does not exist on blockhain or in the mempool,
     an error is returned.
 
 **Example Results**
